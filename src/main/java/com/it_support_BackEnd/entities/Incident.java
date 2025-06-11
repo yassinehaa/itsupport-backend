@@ -5,7 +5,7 @@ import com.it_support_BackEnd.Enums.IncidentStatus;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
+
 @Entity
 public class Incident {
     @Id
