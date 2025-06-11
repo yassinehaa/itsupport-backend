@@ -1,4 +1,4 @@
-package com.it_support_BackEnd.it_support_BackEnd.dto;
+package com.it_support_BackEnd.dto;
 
 public class EquipmentDTO {
 }

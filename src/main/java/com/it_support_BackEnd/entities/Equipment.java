@@ -1,4 +1,4 @@
-package com.it_support_BackEnd.it_support_BackEnd.entities;
+package com.it_support_BackEnd.entities;
 
 
 import jakarta.persistence.*;
