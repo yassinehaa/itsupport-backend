@@ -7,6 +7,9 @@ import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @AllArgsConstructor
 public class EquipementService {
@@ -20,6 +23,13 @@ public class EquipementService {
         Equipment savedEquipment = equipmentRepository.save(equipment);
         return modelMapper.map(savedEquipment, EquipmentDto.class);
     }
+    public List<EquipmentDto> getAllEquipments() {
+        List<Equipment> equipments = equipmentRepository.findAll();
+        return equipments.stream()
+                .map(equipment -> modelMapper.map(equipment, EquipmentDto.class))
+                .collect(Collectors.toList());
+    }
+
     public EquipmentDto getEquipmentById(Long id) {
         Equipment equipment = equipmentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Equipment not found"));

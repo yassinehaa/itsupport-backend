@@ -5,27 +5,34 @@ import com.it_support_BackEnd.dto.EquipmentDto;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/equipment")
+@CrossOrigin(origins = "*")
 public class EquipmentController {
     private final EquipementService equipementService;
 
-    @GetMapping("/add")
+    @PostMapping
     public EquipmentDto addEquipment(@RequestBody EquipmentDto equipmentDto) {
         return equipementService.addEquipment(equipmentDto);
     }
-    @PostMapping("/get")
-    public EquipmentDto getEquipmentById(@RequestParam Long id) {
+    @GetMapping("/{id}")
+    public EquipmentDto getEquipmentById(@PathVariable Long id) {
         return equipementService.getEquipmentById(id);
     }
-    @PostMapping("/update")
-    public EquipmentDto updateEquipment(@RequestParam Long id, @RequestBody EquipmentDto equipmentDto) {
+    @GetMapping
+    public List<EquipmentDto> getAllEquipments(@RequestBody EquipmentDto equipmentDto){
+        return equipementService.getAllEquipments();
+    }
+    @PutMapping("/update/{id}")
+    public EquipmentDto updateEquipment(@PathVariable Long id, @RequestBody EquipmentDto equipmentDto) {
         return equipementService.updateEquipment(id, equipmentDto);
     }
-    @DeleteMapping("/delete")
-    public void deleteEquipment(@RequestParam Long id) {
+    @DeleteMapping("/delete/{id}")
+    public void deleteEquipment(@PathVariable Long id) {
         equipementService.deleteEquipment(id);
     }
 }

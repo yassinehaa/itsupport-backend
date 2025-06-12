@@ -13,7 +13,7 @@ public class ItSupportBackEndApplication {
 		SpringApplication.run(ItSupportBackEndApplication.class, args);
 	}
 	@Configuration
-	public class ModelMapperConfig {
+	public static class ModelMapperConfig {
 		@Bean
 		public ModelMapper modelMapper() {
 			return new ModelMapper();

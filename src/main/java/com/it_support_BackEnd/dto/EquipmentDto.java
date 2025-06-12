@@ -1,15 +1,11 @@
 package com.it_support_BackEnd.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.Value;
+import lombok.*;
 
 import java.io.Serializable;
 
-
-@Value
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
 public class EquipmentDto implements Serializable {
     Long id;
     String name;
