@@ -11,7 +11,7 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface PanneMapper {
 
-  Panne toEntity(PanneDto DTO);
+    Panne toEntity(PanneDto DTO);
     PanneDto toDTO(Panne entity);
     List<PanneDto> toDTOList(List<Panne> pannes);
     List<Panne> toEntityList(List<PanneDto> panneDtos);

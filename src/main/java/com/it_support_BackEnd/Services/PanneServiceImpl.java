@@ -1,10 +1,9 @@
 package com.it_support_BackEnd.Services;
 
-
-import com.it_support_BackEnd.dto.PanneDto;
-import com.it_support_BackEnd.entities.Panne;
-import com.it_support_BackEnd.mapper.PanneMapper;
-import com.it_support_BackEnd.repository.PanneRepository;
+import com.example.support_back.Mapper.PanneMapper;
+import com.example.support_back.dto.PanneDto;
+import com.example.support_back.model.Panne;
+import com.example.support_back.repository.PanneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -21,7 +21,6 @@ public class Panne {
     private   String nom;
     private String priorite;
     private String localisation;
-
     @Enumerated(EnumType.STRING)
     private Etat_panne etatPanne;
 
